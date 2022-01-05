@@ -32,17 +32,20 @@ public class Driver {
 		ArrayList<Employee> arrList = new ArrayList<Employee>();
 		arrList.add(new Employee("Bob", "DepartmentB", 31));
 		arrList.add(new Employee("Alice", "DepartmentA", 30));
-		for (int i = 0; i < arrList.size(); i++)
+		for (int i = 0; i < arrList.size(); i++) {
 			if (i == 0) {
 				System.out.println("Q07 " + arrList.get(i).getArgs());
 			} else {
 				System.out.println("    " + arrList.get(i).getArgs());
 			}
+		}
+		// Sort Employees
 		Collections.sort(arrList, new NameComparator());
 		Collections.sort(arrList, new DepartmentComparator());
 		Collections.sort(arrList, new AgeComparator());
-		for (int i = 0; i < arrList.size(); i++)
-            System.out.println("    " + arrList.get(i).getArgs());
+		for (int i = 0; i < arrList.size(); i++) {
+			System.out.println("    " + arrList.get(i).getArgs());
+		}
         
 		Q08 q08 = new Q08();
 		ArrayList<String> stringList = new ArrayList<String>(Arrays.asList("karan", "madam", "tom", "civic", "radar", "jimmy", "kayak", "john", "refer", "billy", "did"));
@@ -53,6 +56,39 @@ public class Driver {
 		
 		Q10 q10 = new Q10();
 		System.out.println("Q10 " + q10.min(2, 1));
+		
+		Q11 q11 = new Q11();
+		System.out.println("Q11 " + q11.accessVarFromOtherPackage());
+		
+		Q12 q12 = new Q12();
+		System.out.printf("Q12 ");
+		// Enhanced for loop for printing out even numbers
+		for (int i : q12.numArray()) {
+			if (i == q12.numArray().length) {
+				System.out.printf(i + "\n");
+				break;
+			}
+			if ((i&1) != 1) {
+				System.out.printf(i + ", ");
+			}
+		}
+		
+		Q13 q13 = new Q13();
+		for (int i = 0; i < q13.triangle().size(); i++) {
+			if (i == 0) {
+				System.out.println("Q13 " + q13.triangle().get(i));
+			} else {
+				System.out.println("    " + q13.triangle().get(i));
+			}
+		}
+		
+		Q14 q14 = new Q14();
+		System.out.println("Q14 " + q14.switchMethod(2, 3).toString());
+		
+		Q15 q15 = new Q15();
+		double d1 = 5.3;
+		double d2 = 1.3;
+		System.out.println("Q15 " + q15.addition(d1, d2));
 
 	}
 
