@@ -1,0 +1,28 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h3>Create new customer:</h3>
+        
+        <form name = "createNewCustomerRecord" method="post" action="http://localhost:7070/customer/form" onsubmit = "return checkCreateNewCustomerRecord()">
+            <label for="username">Username: </label><br>
+            <input type="text" name="username" id="username_createNewCustomerRecord"><br>
+            <label for="password">Password: </label><br>
+            <input type="password" name="password" id="password_createNewCustomerRecord"><br>
+            <br>
+            <input type="submit">
+        </form>                
+
+				<script>
+					function checkCreateNewCustomerRecord(){
+        		var usernameVal = (document.getElementById('username_createNewCustomerRecord').value);
+        		var passwordVal = (document.getElementById('password_createNewCustomerRecord').value);
+        		if(!/^[a-zA-Z0-9]+$/.test(usernameVal) || !/^[a-zA-Z0-9]+$/.test(passwordVal) || usernameVal.length > 50 || passwordVal.length > 50){
+            	alert('Invalid input. Alphanumeric only.');
+            	return false;
+        		}
+        		return true;
+    			}
+				</script>
+    </body>
+</html>
